@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model User
+@{
+}
+
+
+<h1>@Model.Name 's books</h1>
+@foreach (var book in @Model.BooksToRefund)
+{
+    <div class="card">
+        <img src="@book.ImageUrl" class="card-img-top h-50" alt="@book.Name">
+        <div class="card-body">
+            <h5 class="card-title">@book.Name</h5>
+            <p class="card-text">@book.Description</p>
+            <p class="card-text">@book.AuthorName</p>
+            <p class="card-text">@book.PublishDate.ToShortDateString()</p>
+        </div>
+    </div>
+}
+
